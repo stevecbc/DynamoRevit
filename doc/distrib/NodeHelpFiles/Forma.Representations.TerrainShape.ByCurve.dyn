@@ -1,0 +1,492 @@
+{
+  "Uuid": "cc76e614-d93e-4806-b510-369bdbeecc62",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Forma.Representations.TerrainShape.ByCurve",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "36fd4597d76945748ec44ef59582263d",
+      "Name": "GetSite",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "{\"projectId\":\"pro_0piyim6e3w\",\"siteId\":\"pro_0piyim6e3w\",\"region\":\"US\"}",
+      "Description": "Get the current Site in the Forma  "
+    },
+    {
+      "Id": "98db475525504b7cbb1cfb0045fe3ef5",
+      "Name": "GetTerrain",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "{\"elements\":[{\"urn\":\"urn:adsk-forma-elements:terrain:pro_0piyim6e3w:ec9a9b8c-3c1c-417b-8dfd-a7d771fd5375:1754576844791\",\"path\":\"root/7f98e87d-2dd0-42b5-9647-1982325e8ddd\",\"worldTransform\":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]}],\"region\":\"US\"}",
+      "Description": "Get terrain of current proposal in the Forma Player Extension"
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8dc5fdad02d24edaa04d8fa076462785",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9396cbfa399f457f945363eb8ea0bd17",
+          "Name": "site",
+          "Description": "Site",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "429403b521f6435db08ea0a720cc4bb3",
+          "Name": "curve",
+          "Description": "Curve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "392dce25f3d64975b970e4d1841cc3de",
+          "Name": "fillColor",
+          "Description": "string\nDefault value : \"#cccccc\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dccc6ed8897d42a5840bbbc8ef118594",
+          "Name": "fillOpacity",
+          "Description": "double\nDefault value : 0.7",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d4565fe8ea2b4b24a2372e46f8364920",
+          "Name": "strokeColor",
+          "Description": "string\nDefault value : \"#333333\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "26d14c2191424ccfb8a756931dd9fb25",
+          "Name": "strokeLineWidth",
+          "Description": "double\nDefault value : 2",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fbd2d45e039f49ef9fef07fa770f6f17",
+          "Name": "TerrainShape",
+          "Description": "TerrainShape",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Forma.Representations.TerrainShape.ByCurve@Forma.Site.Site,Autodesk.DesignScript.Geometry.Curve,string,double,string,double",
+      "Replication": "Auto",
+      "Description": "Create a TerrainShape representation from a curve\n\nTerrainShape.ByCurve (site: Site, curve: Curve, fillColor: string = \"#cccccc\", fillOpacity: double = 0.7, strokeColor: string = \"#333333\", strokeLineWidth: double = 2): TerrainShape"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "245517b389c54dbcaa9b1e1e75a527a9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "90869772ba2c483186f4cdde3452be63",
+          "Name": "width",
+          "Description": "Width of rectangle\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78bfc28f18bd41e68fb84bd78108a434",
+          "Name": "length",
+          "Description": "Length of rectangle\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d11bc8a1a88145cf881b9c36caccccca",
+          "Name": "Rectangle",
+          "Description": "Rectangle created by width and length",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Rectangle.ByWidthLength@double,double",
+      "Replication": "Auto",
+      "Description": "Create a Rectangle centered at the WCS origin in the WCS XY Plane, with specified width (X Axis length), and length (Y Axis length).\n\nRectangle.ByWidthLength (width: double = 1, length: double = 1): Rectangle"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "958ea0b294ac473bad53a2362f717f82",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0aa2daca4bcc46b094ea28ad3e571c3d",
+          "Name": "elements",
+          "Description": "Element[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef280dedfce44ec0a5093ca731a08c7e",
+          "Name": "curve",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "733859e1bcc64330a7df22c7c569400b",
+          "Name": "fillColor",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "abd3658b77204aeaae63e6fe15abad27",
+          "Name": "fillOpacity",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ee13ba880f640e49e3dffd03e6d38eb",
+          "Name": "strokeColor",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c08d73ebca4b4ea1b39b930c6937d26b",
+          "Name": "strokeLineWidth",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Forma.Elements.Element.TerrainShape@Forma.Elements.Element[]",
+      "Replication": "Auto",
+      "Description": "Get a 2d representation for visualization on Terrain.\n\nElement.TerrainShape (elements: Element[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Forma.NodeModels.GetSiteHttp, DynamoForma.NodeModels",
+      "Id": "36fd4597d76945748ec44ef59582263d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9cbcb794c0384650b18b84c485b53c8a",
+          "Name": "site",
+          "Description": "Forma Site",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get the current Site in the Forma  ",
+      "InputValue": "{\"projectId\":\"pro_0piyim6e3w\",\"siteId\":\"pro_0piyim6e3w\",\"region\":\"US\"}"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "Id": "60130895575740b393565e41605583b1",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4586db8c9f2141a88aac2c6802d8138c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Produces numeric values",
+      "InputValue": 30.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "Id": "f249ad97787940f9a944a707acd4ed6e",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6a0e60d1a0b040449ffce7f9accacbec",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Produces numeric values",
+      "InputValue": 40.0
+    },
+    {
+      "ConcreteType": "Forma.NodeModels.GetTerrainHttp, DynamoForma.NodeModels",
+      "Id": "98db475525504b7cbb1cfb0045fe3ef5",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "090f4daaf48042c89aeb0b79b436dcd9",
+          "Name": "terrain",
+          "Description": "Forma Terrain Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get terrain of current proposal in the Forma Player Extension",
+      "InputValue": "{\"elements\":[{\"urn\":\"urn:adsk-forma-elements:terrain:pro_0piyim6e3w:ec9a9b8c-3c1c-417b-8dfd-a7d771fd5375:1754576844791\",\"path\":\"root/7f98e87d-2dd0-42b5-9647-1982325e8ddd\",\"worldTransform\":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]}],\"region\":\"US\"}"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d11bc8a1a88145cf881b9c36caccccca",
+      "End": "429403b521f6435db08ea0a720cc4bb3",
+      "Id": "97e0378bfa9c4f2cb8a98bfe756eb7f1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "733859e1bcc64330a7df22c7c569400b",
+      "End": "392dce25f3d64975b970e4d1841cc3de",
+      "Id": "2d58bc97cbee43199a2e9260f67cb3b0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "abd3658b77204aeaae63e6fe15abad27",
+      "End": "dccc6ed8897d42a5840bbbc8ef118594",
+      "Id": "55c83b9050444a568ab57022d17a5d5e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3ee13ba880f640e49e3dffd03e6d38eb",
+      "End": "d4565fe8ea2b4b24a2372e46f8364920",
+      "Id": "cb87365ec1724eebb2189ddfc224a8a3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c08d73ebca4b4ea1b39b930c6937d26b",
+      "End": "26d14c2191424ccfb8a756931dd9fb25",
+      "Id": "83e1b7bf88ea4c31930b4c2a35d6bf56",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9cbcb794c0384650b18b84c485b53c8a",
+      "End": "9396cbfa399f457f945363eb8ea0bd17",
+      "Id": "7ead36e38f9549b8b25198e781e49c30",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4586db8c9f2141a88aac2c6802d8138c",
+      "End": "78bfc28f18bd41e68fb84bd78108a434",
+      "Id": "6f894150a5f6414597400f5cb6ad53e1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6a0e60d1a0b040449ffce7f9accacbec",
+      "End": "90869772ba2c483186f4cdde3452be63",
+      "Id": "c9b6c42392024d98860c0fd8e26625f1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "090f4daaf48042c89aeb0b79b436dcd9",
+      "End": "0aa2daca4bcc46b094ea28ad3e571c3d",
+      "Id": "a0af33594de84e2eb75849211e96e3b6",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "DynamoFormaBeta",
+      "Version": "1.0.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "8dc5fdad02d24edaa04d8fa076462785",
+        "958ea0b294ac473bad53a2362f717f82",
+        "36fd4597d76945748ec44ef59582263d",
+        "98db475525504b7cbb1cfb0045fe3ef5"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.4.1.7055",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -30.584800720214844,
+      "EyeY": 10.280904769897461,
+      "EyeZ": 48.23027229309082,
+      "LookX": 24.7191104888916,
+      "LookY": -32.02517318725586,
+      "LookZ": -45.1702880859375,
+      "UpX": 0.16024762392044067,
+      "UpY": 0.9426414966583252,
+      "UpZ": -0.2928272783756256
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "8dc5fdad02d24edaa04d8fa076462785",
+        "Name": "TerrainShape.ByCurve",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1739.2155701904778,
+        "Y": 995.6758769603082
+      },
+      {
+        "Id": "245517b389c54dbcaa9b1e1e75a527a9",
+        "Name": "Rectangle.ByWidthLength",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1130.1966118391097,
+        "Y": 900.866801118329
+      },
+      {
+        "Id": "958ea0b294ac473bad53a2362f717f82",
+        "Name": "Element.TerrainShape",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1129.7591456635828,
+        "Y": 1122.314699765161
+      },
+      {
+        "Id": "36fd4597d76945748ec44ef59582263d",
+        "Name": "GetSite",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1496.1900445088545,
+        "Y": 875.27002190435
+      },
+      {
+        "Id": "60130895575740b393565e41605583b1",
+        "Name": "Length",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 687.0,
+        "Y": 984.614633061733
+      },
+      {
+        "Id": "f249ad97787940f9a944a707acd4ed6e",
+        "Name": "Width",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 688.0481708672833,
+        "Y": 845.0
+      },
+      {
+        "Id": "98db475525504b7cbb1cfb0045fe3ef5",
+        "Name": "GetTerrain",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 915.0344796105392,
+        "Y": 1122.4094054715379
+      }
+    ],
+    "Annotations": [],
+    "X": -361.15809018317145,
+    "Y": -633.5670688012808,
+    "Zoom": 1.130842140625
+  }
+}
