@@ -1,0 +1,288 @@
+{
+  "Uuid": "0cbd0aa3-ff78-47a5-a6ea-6dcbd0dd2f18",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.Element.GetGeometry",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "141fa1ed-8af8-4ccd-84d7-032c854e66a1-00174436"
+      ],
+      "Id": "faa984555f60469bb2daf15c85611144",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e464e2b2ce4d48fe988f20728ae82934",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d25a923dd6cd4b7fa8c89672a874aad0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "805ab4658cc94fa0bfd792ded4894ecf",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "267db38e949644ab9ca2424d20b22d9d",
+          "Name": "detailLevel",
+          "Description": "Detail level\n\nstring\nDefault value : \"Medium\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b2aefbe470a144e488c709679a212a1a",
+          "Name": "var[]",
+          "Description": "List of geometry from the element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetGeometry@string",
+      "Replication": "Auto",
+      "Description": "Returns all geometry associated with an element. Ignores transforms when used with linked elements.\n\nElement.GetGeometry (detailLevel: string = \"Medium\"): var[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "195ca01a59724bc386ff2d379dec284b",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "833aec20e9864d70811a4cdf8103b345",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "Fine"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2ad0354fc4f6495d82310becbad9d1bb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "d69095f8c9004f00ad3460bd2afa9f4f",
+          "Name": "solid",
+          "Description": "Autodesk.DesignScript.Geometry.Solid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5231687afe9e499580f2e5e95ae23495",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Solid.Volume",
+      "Replication": "Auto",
+      "Description": "Returns the total volume of the Solid\n\nSolid.Volume: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "ba8a434a0eb84df3a6009404be4491c6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2f033bb11264427293919439c4e26c03",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5c3edfe88fc44240b4c404399c31bb82",
+          "Name": "BoundingBox",
+          "Description": "BoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.BoundingBox",
+      "Replication": "Auto",
+      "Description": "Get the BoundingBox containing the given piece of Geometry\n\nGeometry.BoundingBox: BoundingBox"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e464e2b2ce4d48fe988f20728ae82934",
+      "End": "805ab4658cc94fa0bfd792ded4894ecf",
+      "Id": "6e474965cd594095a433c71b2958c787",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b2aefbe470a144e488c709679a212a1a",
+      "End": "d69095f8c9004f00ad3460bd2afa9f4f",
+      "Id": "60bcf2aeea44449fafa95ff599cb5572",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b2aefbe470a144e488c709679a212a1a",
+      "End": "2f033bb11264427293919439c4e26c03",
+      "Id": "8af0168f4f4940d48e6dcda34767c7c4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "833aec20e9864d70811a4cdf8103b345",
+      "End": "267db38e949644ab9ca2424d20b22d9d",
+      "Id": "b126a0352e85417e9bfe7dc953a6f96f",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -38.825096130371094,
+      "EyeY": 53.9863338470459,
+      "EyeZ": 78.72241592407227,
+      "LookX": 26.696195602416992,
+      "LookY": -29.11834716796875,
+      "LookZ": -46.82359313964844,
+      "UpX": 0.23541967570781708,
+      "UpY": 0.8798184990882874,
+      "UpZ": -0.41291266679763794
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "faa984555f60469bb2daf15c85611144",
+        "Name": "Select Model Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 387.0,
+        "Y": 454.0
+      },
+      {
+        "Id": "d25a923dd6cd4b7fa8c89672a874aad0",
+        "Name": "Element.GetGeometry",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 782.5,
+        "Y": 463.0
+      },
+      {
+        "Id": "195ca01a59724bc386ff2d379dec284b",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 469.5,
+        "Y": 647.0
+      },
+      {
+        "Id": "2ad0354fc4f6495d82310becbad9d1bb",
+        "Name": "Solid.Volume",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1162.4073220579728,
+        "Y": 339.6032986471866
+      },
+      {
+        "Id": "ba8a434a0eb84df3a6009404be4491c6",
+        "Name": "Geometry.BoundingBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1149.8591027887808,
+        "Y": 579.9176939645147
+      }
+    ],
+    "Annotations": [],
+    "X": -513.0081513766781,
+    "Y": -272.07953946645364,
+    "Zoom": 1.7835993623828124
+  }
+}

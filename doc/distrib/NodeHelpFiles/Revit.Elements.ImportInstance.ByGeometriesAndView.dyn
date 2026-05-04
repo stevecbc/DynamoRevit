@@ -1,0 +1,522 @@
+{
+  "Uuid": "c25c8fb0-e921-49d8-9fb6-501daff4f3a2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.ImportInstance.ByGeometriesAndView",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "Id": "65cd060c7b1d4c19a0bc603eff82cf5b",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "bb9c85226b5d4b82a7249efaf0aced40",
+          "Name": "item0",
+          "Description": "Item Index #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d9d47a5fccea43d593d9035f248e2395",
+          "Name": "item1",
+          "Description": "Item Index #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e78cfa0598ad4c6da59d0823f2a1df98",
+          "Name": "list",
+          "Description": "A list (type: var[]..[])",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Makes a new list from the given inputs"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "868f201bc8f445feb782ec520c5c5f6f",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "acaf37d00456479495e06f21259255f4",
+          "Name": "width",
+          "Description": "Width of cuboid\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "135a1ff03ea742afa2cc211904dbdb62",
+          "Name": "length",
+          "Description": "Length of cuboid\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29ba1ee1dab34b65816b794b19406e3f",
+          "Name": "height",
+          "Description": "Height of cuboid\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8b007f67fe224d71a497b4fe8e55ef6e",
+          "Name": "Cuboid",
+          "Description": "Cuboid created by lengths",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Cuboid.ByLengths@double,double,double",
+      "Replication": "Auto",
+      "Description": "Create a Cuboid centered at WCS origin, with width, length, and height.\n\nCuboid.ByLengths (width: double = 1, length: double = 1, height: double = 1): Cuboid"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "80da7dd28c95459a98e4a51c29fb57c5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "32847e17af074cd38f5b5a30c1bc2534",
+          "Name": "centerPoint",
+          "Description": "Point\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "972e47be666a414bb02026f510ef594b",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "76b0b0a8461a490f962d887095a5fd4a",
+          "Name": "Sphere",
+          "Description": "Sphere",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Sphere.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Replication": "Auto",
+      "Description": "Create a Solid Sphere cetered at the input Point, with given radius.\n\nSphere.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Sphere"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "21175af2326b4b9b8b4b51d03705f049",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3b8b6956fc6544a185ebfd17c1bb715d",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 5.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "8ece2d98db864832ad04969657f8dd6b",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "46b6b1ba189342e890637a8b13ecb568",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 6.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "3324522436164bda8405cf26fa6a703c",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b76c385d8df64b5abe2ea09a142b7d99",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 10.0
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "cc3fedde95434526ac84fb361682a18f",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "38d544940d7140ac81dc9187280ec1b9",
+          "Name": "Point",
+          "Description": "Origin point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Origin",
+      "Replication": "Auto",
+      "Description": "Get the Origin point (0,0,0)\n\nPoint.Origin ( ): Point"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "bd4ea9875ec34d7bb0c3d35fd61b5e02",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2e5173b977b94346bca40a9b62dbaa79",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 8.0
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9aff92f1f6e64e8eb5b77160791eb6ef",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9396eef368c3485698440a4909e8a06e",
+          "Name": "geometries",
+          "Description": "A collection of Geometry\n\nGeometry[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b7b6ba47c5f94120af10490c11dfe951",
+          "Name": "view",
+          "Description": "The view into which the ImportInstance will be imported.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6f87f1befa12482d90c4ec53508008ea",
+          "Name": "ImportInstance",
+          "Description": "ImportInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ImportInstance.ByGeometriesAndView@Autodesk.DesignScript.Geometry.Geometry[],Revit.Elements.Views.View",
+      "Replication": "Auto",
+      "Description": "Import a collection of Geometry (Solid, Curve, Surface, etc) into Revit views as an ImportInstance. This variant is much faster than ImportInstance.ByGeometry as it uses a batch method.\n\nImportInstance.ByGeometriesAndView (geometries: Geometry[], view: View): ImportInstance"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "{3D}",
+      "Id": "e98a3095dde84cc2b5b2476485c1f079",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "11d0db8ee8654da1a2f953508fd72fea",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e78cfa0598ad4c6da59d0823f2a1df98",
+      "End": "9396eef368c3485698440a4909e8a06e",
+      "Id": "615799830eac4ea093c6a315e82bf399",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8b007f67fe224d71a497b4fe8e55ef6e",
+      "End": "d9d47a5fccea43d593d9035f248e2395",
+      "Id": "676a363f3c8b4fb29fea6bc6e2f24947",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "76b0b0a8461a490f962d887095a5fd4a",
+      "End": "bb9c85226b5d4b82a7249efaf0aced40",
+      "Id": "d3c0fdcc9ef6486082246264c886a05e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3b8b6956fc6544a185ebfd17c1bb715d",
+      "End": "972e47be666a414bb02026f510ef594b",
+      "Id": "89598802809e4068899740cd6bdf173e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "46b6b1ba189342e890637a8b13ecb568",
+      "End": "29ba1ee1dab34b65816b794b19406e3f",
+      "Id": "1c784e292ee543be9540c22c30249395",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b76c385d8df64b5abe2ea09a142b7d99",
+      "End": "acaf37d00456479495e06f21259255f4",
+      "Id": "23036b0eed7b4f599a3076d5389e4a5f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "38d544940d7140ac81dc9187280ec1b9",
+      "End": "32847e17af074cd38f5b5a30c1bc2534",
+      "Id": "4a0d360c78ed4b6ba3bad1d2ff19a17d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e5173b977b94346bca40a9b62dbaa79",
+      "End": "135a1ff03ea742afa2cc211904dbdb62",
+      "Id": "7064d4ce304e471e9fe145ead054e687",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "11d0db8ee8654da1a2f953508fd72fea",
+      "End": "b7b6ba47c5f94120af10490c11dfe951",
+      "Id": "22edd2458b024703bece174f4848c8d6",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "9aff92f1-f6e6-4e8e-b5b7-7160791eb6ef",
+      "Binding": {
+        "ByGeometriesAndView_InClassDecl-1_InFunctionScope-1_Instance0_9aff92f1-f6e6-4e8e-b5b7-7160791eb6ef": "H4sIAAAAAAAACh3LIQ6EMBAF0Lt8zSTTUqYtGoNG7qyY0l2CQZA6wt1JeP59LlRrhhGXYmnnfmzzpBgVYajRxcwUvDMK/C9Ukq0kJdVszDJEIWafcuGfolPMR3uvF3GuDzfu7wP2VSBHXwAAAA=="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -43.523624420166016,
+      "EyeY": 30.10134506225586,
+      "EyeZ": 31.476152420043945,
+      "LookX": 20.627155303955078,
+      "LookY": -42.78746032714844,
+      "LookZ": -37.69285583496094,
+      "UpX": 0.2579365074634552,
+      "UpY": 0.8433914184570312,
+      "UpZ": -0.47133830189704895
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "65cd060c7b1d4c19a0bc603eff82cf5b",
+        "Name": "List Create",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1822.5,
+        "Y": 868.0
+      },
+      {
+        "Id": "868f201bc8f445feb782ec520c5c5f6f",
+        "Name": "Cuboid.ByLengths",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1475.5,
+        "Y": 1041.0
+      },
+      {
+        "Id": "80da7dd28c95459a98e4a51c29fb57c5",
+        "Name": "Sphere.ByCenterPointRadius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1471.5,
+        "Y": 701.0
+      },
+      {
+        "Id": "21175af2326b4b9b8b4b51d03705f049",
+        "Name": "Sphere Radius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1155.5,
+        "Y": 798.0
+      },
+      {
+        "Id": "8ece2d98db864832ad04969657f8dd6b",
+        "Name": "Cuboid Height",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1155.5,
+        "Y": 1203.0
+      },
+      {
+        "Id": "3324522436164bda8405cf26fa6a703c",
+        "Name": "Cuboid Length",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1150.5,
+        "Y": 943.0
+      },
+      {
+        "Id": "cc3fedde95434526ac84fb361682a18f",
+        "Name": "Point.Origin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1166.5,
+        "Y": 641.0
+      },
+      {
+        "Id": "bd4ea9875ec34d7bb0c3d35fd61b5e02",
+        "Name": "Cuboid Width",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1155.5,
+        "Y": 1072.0
+      },
+      {
+        "Id": "9aff92f1f6e64e8eb5b77160791eb6ef",
+        "Name": "ImportInstance.ByGeometriesAndView",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2121.5,
+        "Y": 951.0
+      },
+      {
+        "Id": "e98a3095dde84cc2b5b2476485c1f079",
+        "Name": "Views",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1793.5,
+        "Y": 1136.0
+      }
+    ],
+    "Annotations": [],
+    "X": -1362.0965396328293,
+    "Y": -691.474831263499,
+    "Zoom": 1.33823125
+  }
+}

@@ -1,0 +1,564 @@
+{
+  "Uuid": "c25c8fb0-e921-49d8-9fb6-501daff4f3a2",
+  "IsCustomNode": false,
+  "Description": "Family Instance Transform Demonstration - Shows how to use the FamilyInstance.Transform node to move and rotate Revit family instances using coordinate systems",
+  "Name": "Revit.Elements.FamilyInstance.Transform",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "37796677c4ca4336930d16367d7a204b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "acd227585e45446681083a5b96be8f3f",
+          "Name": "familyInstance",
+          "Description": "Revit.Elements.FamilyInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "39754ab8cfca4d038d67e2053a188b1e",
+          "Name": "fromCoordinateSystem",
+          "Description": "Source CoordinatSystem\n\nCoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dec4bc278bf441f5a4907f0dfbe391d9",
+          "Name": "contextCoordinateSystem",
+          "Description": "Context CordinateSystem\n\nCoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4c579321a3c84879a18e6ae1f9614ad5",
+          "Name": "FamilyInstance",
+          "Description": "Transformed Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.FamilyInstance.Transform@Autodesk.DesignScript.Geometry.CoordinateSystem,Autodesk.DesignScript.Geometry.CoordinateSystem",
+      "Replication": "Auto",
+      "Description": "Transforms this FamilyInstance from a source CoordinateSystem to a new context CoordinateSystem.\n\nFamilyInstance.Transform (fromCoordinateSystem: CoordinateSystem, contextCoordinateSystem: CoordinateSystem): FamilyInstance"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "8f3a5315-0c53-46b4-bd66-7fe172228201-0010d612"
+      ],
+      "Id": "8371fa27f723437188caaed0e4070199",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b439bdce77074e96b84e7a4c187c23c4",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "460f3260f0f44cc8bc03d860260b69a7",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4bb65e12f5e142f2864844bcd8b94305",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 5.0
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "68591f331a634c0b9f45b765a93c7647",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "bff917f7008240a6906a4cb942485940",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0c27b2513f824cb3b1b6d4bd938cc79a",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "81253f4c5de24fc1aa7f6b6f63482eeb",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X and Y locations, with X and Y Axes set as WCS X and Y Axes. Z defaults to 0.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "559d37d7c797486f9164371aa0e645da",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0ea19724d06a4b7b8718081c811cf0d6",
+          "Name": "x",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "082647a03c154099b9517cb96e080e25",
+          "Name": "y",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0ec366f6010c4a929e3666e46ea64322",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ByOrigin@double,double",
+      "Replication": "Auto",
+      "Description": "Create a CoordinateSystem with origin at X and Y locations, with X and Y Axes set as WCS X and Y Axes. Z defaults to 0.\n\nCoordinateSystem.ByOrigin (x: double = 0, y: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "4a83051743924f9b8040b55888dd78c7",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2dc3b3d1ded2437a94bf53dd5803314f",
+          "Name": "coordinateSystem",
+          "Description": "Autodesk.DesignScript.Geometry.CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "159d10f8b52b4aba9d701f226f112b87",
+          "Name": "origin",
+          "Description": "Origin point\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a4545aaa384f4555964a4aa796470086",
+          "Name": "axis",
+          "Description": "Vector axis for rotation\n\nVector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2e076f54308d45fcb7d75e6bd1b879ef",
+          "Name": "degrees",
+          "Description": "Degrees to rotate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "86a6a3ef05a94bbc9b12a8587a3178e4",
+          "Name": "CoordinateSystem",
+          "Description": "Rotated coordinate system",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.Rotate@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,double",
+      "Replication": "Auto",
+      "Description": "Rotates an object around an origin and an axis by a specified degree\n\nCoordinateSystem.Rotate (origin: Point, axis: Vector, degrees: double = 0): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "60481f0265c8453288cda4b44825c555",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9047b68277944c79912cd76fc797035f",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 15.0
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b192eb7d61734eefbbe666a9e5346502",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "dd03adb746b44ef6980b383798ac1caa",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c20f2334a8b848dab54c281abd60827b",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3daff7f9947e4aaa9e8cf305f1f17ddc",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double",
+      "Replication": "Auto",
+      "Description": "Form a Point in the XY plane given two 2 cartesian coordinates. The Z component is 0.\n\nPoint.ByCoordinates (x: double = 0, y: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "fbaf218991574b06a84ab2bbea852274",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "90858187ddff48d9922b7277b552ac9a",
+          "Name": "Vector",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Vector.XAxis",
+      "Replication": "Auto",
+      "Description": "Get the canonical X axis Vector (1,0,0)\n\nVector.XAxis ( ): Vector"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "1252abd10eb64e8982743a061a6eb056",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "303743e8672941bda67869c52384ed73",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 30.0
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b439bdce77074e96b84e7a4c187c23c4",
+      "End": "acd227585e45446681083a5b96be8f3f",
+      "Id": "5e347c4898a8412b90c370331d4847eb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4bb65e12f5e142f2864844bcd8b94305",
+      "End": "dd03adb746b44ef6980b383798ac1caa",
+      "Id": "e9e8bd50300e46708bc1be2050575747",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4bb65e12f5e142f2864844bcd8b94305",
+      "End": "0ea19724d06a4b7b8718081c811cf0d6",
+      "Id": "803a0d0d214b4befb2653ee7da57dca9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "81253f4c5de24fc1aa7f6b6f63482eeb",
+      "End": "39754ab8cfca4d038d67e2053a188b1e",
+      "Id": "97b6ee2a4abd47b7a421daf1368d51f4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ec366f6010c4a929e3666e46ea64322",
+      "End": "2dc3b3d1ded2437a94bf53dd5803314f",
+      "Id": "1c3670d5ea2d4b4ab3f0c7c96ba9aea8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "86a6a3ef05a94bbc9b12a8587a3178e4",
+      "End": "dec4bc278bf441f5a4907f0dfbe391d9",
+      "Id": "5e718d365bed4e92a8e0d19f9bad3568",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9047b68277944c79912cd76fc797035f",
+      "End": "c20f2334a8b848dab54c281abd60827b",
+      "Id": "822501d887354e81a16d5f3aefeb94b3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9047b68277944c79912cd76fc797035f",
+      "End": "082647a03c154099b9517cb96e080e25",
+      "Id": "a45a984da9254d8b9c7cb334d79f3784",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3daff7f9947e4aaa9e8cf305f1f17ddc",
+      "End": "159d10f8b52b4aba9d701f226f112b87",
+      "Id": "d12736c2057a4ac0bdae055b823469fa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "90858187ddff48d9922b7277b552ac9a",
+      "End": "a4545aaa384f4555964a4aa796470086",
+      "Id": "2c5afcc16f02460aaeb49afa0e5bc981",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "303743e8672941bda67869c52384ed73",
+      "End": "2e076f54308d45fcb7d75e6bd1b879ef",
+      "Id": "7bf18df7a4f14e29a41d7968a5924fca",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "37796677c4ca4336930d16367d7a204b",
+        "Name": "FamilyInstance.Transform",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 783.4666841033086,
+        "Y": 626.286183226551
+      },
+      {
+        "Id": "8371fa27f723437188caaed0e4070199",
+        "Name": "Select Model Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 348.1090775712477,
+        "Y": 467.50464201509885
+      },
+      {
+        "Id": "460f3260f0f44cc8bc03d860260b69a7",
+        "Name": "X Offset",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -266.5333158966915,
+        "Y": 721.7861832265512
+      },
+      {
+        "Id": "68591f331a634c0b9f45b765a93c7647",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 345.4666841033085,
+        "Y": 657.286183226551
+      },
+      {
+        "Id": "559d37d7c797486f9164371aa0e645da",
+        "Name": "CoordinateSystem.ByOrigin",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -33.53331589669148,
+        "Y": 691.2861832265512
+      },
+      {
+        "Id": "4a83051743924f9b8040b55888dd78c7",
+        "Name": "CoordinateSystem.Rotate",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 345.4666841033085,
+        "Y": 845.4981505662469
+      },
+      {
+        "Id": "60481f0265c8453288cda4b44825c555",
+        "Name": "Z Offset",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -266.5333158966915,
+        "Y": 901.4949048418208
+      },
+      {
+        "Id": "b192eb7d61734eefbbe666a9e5346502",
+        "Name": "Point.ByCoordinates",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -33.53331589669148,
+        "Y": 897.9949048418208
+      },
+      {
+        "Id": "fbaf218991574b06a84ab2bbea852274",
+        "Name": "Vector.XAxis",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -32.212119162722104,
+        "Y": 1104.7036264570904
+      },
+      {
+        "Id": "1252abd10eb64e8982743a061a6eb056",
+        "Name": "Number",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -26.817464825501133,
+        "Y": 1267.0199659361947
+      }
+    ],
+    "Annotations": [],
+    "X": 624.5785631504203,
+    "Y": -459.874866851811,
+    "Zoom": 1.1575
+  }
+}

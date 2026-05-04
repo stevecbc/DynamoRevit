@@ -1,0 +1,148 @@
+{
+  "Uuid": "c25c8fb0-e921-49d8-9fb6-501daff4f3a2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.ForgeType.IsValidObject",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.SpecTypes, DSRevitNodesUI",
+      "SelectedIndex": 66,
+      "SelectedString": "autodesk.spec.aec:length",
+      "Id": "0d7a9529ded541c6902755a2a0016fb8",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b2d8ae8c73e3403eadc66f0d0c44a4cf",
+          "Name": "SpecType",
+          "Description": "The selected SpecType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Spec type."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bb1178d0e7f04797a2e88873fb32e135",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c95e2980ccce4f76a5ad05b4466ea62e",
+          "Name": "forgeType",
+          "Description": "Revit.Elements.ForgeType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8537b4d8ccb1470a8b011bd95648fac3",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ForgeType.IsValidObject",
+      "Replication": "Auto",
+      "Description": "Specifies whether the .NET object represents a valid Revit entity.\n\nForgeType.IsValidObject: bool"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b2d8ae8c73e3403eadc66f0d0c44a4cf",
+      "End": "c95e2980ccce4f76a5ad05b4466ea62e",
+      "Id": "0cbca38d210443329c18ab7f2781f448",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "0d7a9529ded541c6902755a2a0016fb8",
+        "Name": "Available SpecTypes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1273.086053412463,
+        "Y": 683.0
+      },
+      {
+        "Id": "bb1178d0e7f04797a2e88873fb32e135",
+        "Name": "ForgeType.IsValidObject",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1610.9436201780418,
+        "Y": 683.0
+      }
+    ],
+    "Annotations": [],
+    "X": -2579.6738688449373,
+    "Y": -1295.274592537122,
+    "Zoom": 2.370040607913583
+  }
+}

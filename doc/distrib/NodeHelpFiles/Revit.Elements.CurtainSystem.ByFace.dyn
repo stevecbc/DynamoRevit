@@ -1,0 +1,249 @@
+{
+  "Uuid": "c25c8fb0-e921-49d8-9fb6-501daff4f3a2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.CurtainSystem.ByFace",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "ffb06cf2c9ed4bb182313f8f59ad5a81",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a3feb8d2aeaa42789bd153cd99408051",
+          "Name": "face",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fb247052ec7343438993860625963956",
+          "Name": "curtainSystemType",
+          "Description": "CurtainSystemType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e6e908d52114d4ab94010941a5806d1",
+          "Name": "CurtainSystem",
+          "Description": "CurtainSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.CurtainSystem.ByFace@Autodesk.DesignScript.Geometry.Surface,Revit.Elements.CurtainSystemType",
+      "Replication": "Auto",
+      "Description": "Create Curtain System from face references\n\nCurtainSystem.ByFace (face: Surface, curtainSystemType: CurtainSystemType): CurtainSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3b4002be9ea245aba4ad63d05539d317",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "57826a93e1c74e2986e5099a6f0ad9b6",
+          "Name": "name",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c343cf8cb8ea4f7695a9d89a40b4df9c",
+          "Name": "CurtainSystemType",
+          "Description": "CurtainSystemType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.CurtainSystemType.ByName@string",
+      "Replication": "Auto",
+      "Description": "Select a CurtainSystemType from the document given\n\nCurtainSystemType.ByName (name: string): CurtainSystemType"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSFaceSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "79ccd44c-4104-468f-9985-63b26df287c7-00289b2b:15:SURFACE"
+      ],
+      "Id": "8e79594d37e54a28a03a84fa5a5c460f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e5b67293aee34674bb2851a995c183f9",
+          "Name": "Surface",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a face."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "ff29ba504134462e83c74bf020b9d623",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aaba792a0a754a6989c88be9ddad31ba",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "5' x 10'"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c343cf8cb8ea4f7695a9d89a40b4df9c",
+      "End": "fb247052ec7343438993860625963956",
+      "Id": "a06ec4a58c5641ff9cb7c8c075894bd5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e5b67293aee34674bb2851a995c183f9",
+      "End": "a3feb8d2aeaa42789bd153cd99408051",
+      "Id": "e15b5d9016d14733a3432e03ac528d9b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "aaba792a0a754a6989c88be9ddad31ba",
+      "End": "57826a93e1c74e2986e5099a6f0ad9b6",
+      "Id": "6ebc39a18693474d8acb8c8a430e2adb",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "ffb06cf2-c9ed-4bb1-8231-3f8f59ad5a81",
+      "Binding": {
+        "ByFace_InClassDecl-1_InFunctionScope-1_Instance0_ffb06cf2-c9ed-4bb1-8231-3f8f59ad5a81": "H4sIAAAAAAAACh3LoQ6EMAwA0H+ppsnW63UbGoM+SRHQATkzcTe37N9JcM+8pUE5/vXI01Y3GJcG+QE0hU/9fcs1TwqjQkhmmdmQvWNkiSemFN8or50knxSDBXSOYtrJFAaFudTnkoj3wh362tcbbTzKf3AAAAA="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -168.06302642822266,
+      "EyeY": 23.6361083984375,
+      "EyeZ": 217.08614349365234,
+      "LookX": 109.75151824951172,
+      "LookY": -80.05524444580078,
+      "LookZ": -123.22883605957031,
+      "UpX": 0.29029932618141174,
+      "UpY": 0.8997139930725098,
+      "UpZ": -0.3259466588497162
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "ffb06cf2c9ed4bb182313f8f59ad5a81",
+        "Name": "CurtainSystem.ByFace",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1590.2745548332168,
+        "Y": 629.2440042879325
+      },
+      {
+        "Id": "3b4002be9ea245aba4ad63d05539d317",
+        "Name": "CurtainSystemType.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1206.0,
+        "Y": 728.9152169477984
+      },
+      {
+        "Id": "8e79594d37e54a28a03a84fa5a5c460f",
+        "Name": "Select Face",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1225.0080334286981,
+        "Y": 497.18862930157115
+      },
+      {
+        "Id": "ff29ba504134462e83c74bf020b9d623",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 930.0,
+        "Y": 728.9152169477984
+      }
+    ],
+    "Annotations": [],
+    "X": -1331.4034907386479,
+    "Y": -579.4399862537605,
+    "Zoom": 1.6482142330507632
+  }
+}

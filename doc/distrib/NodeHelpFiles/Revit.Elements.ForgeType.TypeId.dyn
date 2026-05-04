@@ -1,0 +1,194 @@
+{
+  "Uuid": "c25c8fb0-e921-49d8-9fb6-501daff4f3a2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.ForgeType.TypeId",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "34dc86b0064745e7905fb7d15163d89a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f96caf2cb3fa4f2698a0c202568472de",
+          "Name": "forgeType",
+          "Description": "Revit.Elements.ForgeType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0269a4c504a84bf08a742f83d8b050cd",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ForgeType.TypeId",
+      "Replication": "Auto",
+      "Description": "The schema identifier.\n\nForgeType.TypeId: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b3376326664b48cd84e181a477ad07e5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "06c3bac4a2da45b991a4ac8409e7c494",
+          "Name": "forgeType",
+          "Description": "Revit.Elements.ForgeType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "165ffa667fca41029a87f96e12a45ba3",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ForgeType.IsValidObject",
+      "Replication": "Auto",
+      "Description": "Specifies whether the .NET object represents a valid Revit entity.\n\nForgeType.IsValidObject: bool"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.SpecTypes, DSRevitNodesUI",
+      "SelectedIndex": 66,
+      "SelectedString": "autodesk.spec.aec:length",
+      "Id": "0f0b233ca4064c28a094dfc39178fce8",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1dc157161e9546e8836b755653f6bdca",
+          "Name": "SpecType",
+          "Description": "The selected SpecType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Spec type."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "1dc157161e9546e8836b755653f6bdca",
+      "End": "f96caf2cb3fa4f2698a0c202568472de",
+      "Id": "1bef9fa5d8504bbd8ba451cb6dd5c3ed",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1dc157161e9546e8836b755653f6bdca",
+      "End": "06c3bac4a2da45b991a4ac8409e7c494",
+      "Id": "10603c663ba64f29836f6301aea10631",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "34dc86b0064745e7905fb7d15163d89a",
+        "Name": "ForgeType.TypeId",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1093.00531035258,
+        "Y": 817.9456885348712
+      },
+      {
+        "Id": "b3376326664b48cd84e181a477ad07e5",
+        "Name": "ForgeType.IsValidObject",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1093.6226197297997,
+        "Y": 625.0
+      },
+      {
+        "Id": "0f0b233ca4064c28a094dfc39178fce8",
+        "Name": "Available SpecTypes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 759.0,
+        "Y": 709.1086229302567
+      }
+    ],
+    "Annotations": [],
+    "X": -736.224301419599,
+    "Y": -760.5971609692535,
+    "Zoom": 1.7433199287549712
+  }
+}
