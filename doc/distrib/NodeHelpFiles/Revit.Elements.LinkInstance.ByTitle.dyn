@@ -1,0 +1,560 @@
+{
+  "Uuid": "349ea766-485c-48ad-9d0b-30c9de747f46",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.LinkInstance.ByTitle",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d0ffcef01cef4f0b9a989b152951bfbc",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2ec2e306744f4a87af34b2f8f1367b71",
+          "Name": "title",
+          "Description": "Project title (file name)\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "61e6671687e9433ebfb524ba6b2ec4e3",
+          "Name": "linkInstance[]",
+          "Description": "Revil link instance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.ByTitle@string",
+      "Replication": "Auto",
+      "Description": "Retrieves link instances by project title (file name)\n\nLinkInstance.ByTitle (title: string): LinkInstance[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "4a084fabd0a14dadac9281c36951e057",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "029444520bd740068960757356e385cd",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "Snowdon Towers Sample Structural"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bab6a84691c941d9a96b569a4cf426e8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "55467da7154a467ca743055df939608f",
+          "Name": "linkInstance",
+          "Description": "Revit link instance\n\nLinkInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "980ab8df7cde4c3d9f21f63b001ac4c3",
+          "Name": "category",
+          "Description": "Element category\n\nCategory",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8dadea313f5142a3b02436ef8233448a",
+          "Name": "view",
+          "Description": "View in active document\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e5eea9bcad2041149fd56c5065da0a89",
+          "Name": "linkedElementsInView[]",
+          "Description": "All elements of the category in the view",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.AllElementsOfCategoryInView@Revit.Elements.LinkInstance,Revit.Elements.Category,Revit.Elements.Views.View",
+      "Replication": "Auto",
+      "Description": "Retrieves all elements of a category in a given view of a link instance\n\nLinkInstance.AllElementsOfCategoryInView (linkInstance: LinkInstance, category: Category, view: View): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "eb6c5ae183ab4ee4af4fe3f0d576a285",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a6a26314c446411bb60177991e216be1",
+          "Name": "name",
+          "Description": "Name of the link instance\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bc0b509f20a44ca397130d2da985d082",
+          "Name": "linkInstance[]",
+          "Description": "Revit link instance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.ByName@string",
+      "Replication": "Auto",
+      "Description": "Retrieves a link instance by name\n\nLinkInstance.ByName (name: string): LinkInstance[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "148f7c2a39f241488c956993c42c65c3",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f472d62cedb24feca5e16151c05e87e7",
+          "Name": "linkInstance",
+          "Description": "Revit link instance\n\nLinkInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "48f7f3dd440c4e9ca5491668c8d1e0f2",
+          "Name": "linkDocument",
+          "Description": "Document of link instance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.Document@Revit.Elements.LinkInstance",
+      "Replication": "Auto",
+      "Description": "Queries the link instance’s document\n\nLinkInstance.Document (linkInstance: LinkInstance): Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "184a8b737b9243aab18e73e79f3f4913",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2151ae4d481a46878845aff8fbaeacfb",
+          "Name": "linkInstance",
+          "Description": "Revit link instance\n\nLinkInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c7a59dbf5d714450bfde68c1cf8441a7",
+          "Name": "linkDocument",
+          "Description": "Document of link instance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.Document@Revit.Elements.LinkInstance",
+      "Replication": "Auto",
+      "Description": "Queries the link instance’s document\n\nLinkInstance.Document (linkInstance: LinkInstance): Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "cef13bf45221408386a2813e94929289",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "8a7048d1f5134908af84f325dbf8d0ec",
+          "Name": "linkedElement",
+          "Description": "Element from a link instance\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3d0dec41fddf459aa938ae04cea07162",
+          "Name": "geometry[]",
+          "Description": "The linked element’s location",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkElement.GetLocation@Revit.Elements.Element",
+      "Replication": "Auto",
+      "Description": "Returns a linked element’s location\n\nLinkElement.GetLocation (linkedElement: Element): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "fc555200365c403bb3bcf0fd19510c38",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "313f4bcb90144812aa196440a4e1c4c9",
+          "Name": "linkInstance",
+          "Description": "Linked Element Instance\n\nLinkInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6022edc0f2554ea991ef26f14d5a5754",
+          "Name": "level",
+          "Description": "Linked Element Level\n\nLevel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a48acf13a3db402496388e5672e456cd",
+          "Name": "elements[]",
+          "Description": "List of elements",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.AllElementsAtLevel@Revit.Elements.LinkInstance,Revit.Elements.Level",
+      "Replication": "Auto",
+      "Description": "Retrieves all elements from a link instance on the given level\n\nLinkInstance.AllElementsAtLevel (linkInstance: LinkInstance, level: Level): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3902e13e76144be7ae54f5c2ff9f2561",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "fc06d7bccb354d428b3625b046803614",
+          "Name": "linkInstance",
+          "Description": "Revit link Instance\n\nLinkInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3545a94be8b645d59696836ca49ef253",
+          "Name": "category",
+          "Description": "Element category\n\nCategory",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "736f1eb58566411f9e9e4ebcb47a1cf4",
+          "Name": "linkedElements[]",
+          "Description": "All elements of the category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.LinkInstance.AllElementsOfCategory@Revit.Elements.LinkInstance,Revit.Elements.Category",
+      "Replication": "Auto",
+      "Description": "Retrieves all elements of a given category in a link instance\n\nLinkInstance.AllElementsOfCategory (linkInstance: LinkInstance, category: Category): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "804b390b9fa149a08eeebbb9df6d7f9c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "a862261756a14438a58ff9e784d98d2a",
+          "Name": "familyDocument",
+          "Description": "Revit.Application.FamilyDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5eaa779f9cd4492382d38a989403735c",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Application.FamilyDocument.Category",
+      "Replication": "Auto",
+      "Description": "Retrieves the Category object that represents the category or sub category in which the elements ( this family could generate ) reside.\n\nFamilyDocument.Category: Category"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 625,
+      "SelectedString": "OST_StructuralFraming",
+      "Id": "5500cd4a6e1240d68a108d3a1d97607a",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "559315e54b0642adb9c5bfc4a79b43f0",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "61e6671687e9433ebfb524ba6b2ec4e3",
+      "End": "f472d62cedb24feca5e16151c05e87e7",
+      "Id": "7f2c99ce886047b8ae1835f82663917c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "61e6671687e9433ebfb524ba6b2ec4e3",
+      "End": "8a7048d1f5134908af84f325dbf8d0ec",
+      "Id": "544c61d9cba04c808635d17cef6f9133",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "61e6671687e9433ebfb524ba6b2ec4e3",
+      "End": "fc06d7bccb354d428b3625b046803614",
+      "Id": "7a445f620955437086a92c4859b15d00",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "029444520bd740068960757356e385cd",
+      "End": "2ec2e306744f4a87af34b2f8f1367b71",
+      "Id": "d5465d4bc0984ad7811dcc494b750c90",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "559315e54b0642adb9c5bfc4a79b43f0",
+      "End": "3545a94be8b645d59696836ca49ef253",
+      "Id": "380b3503390c49ce9dbcf9e27a962cac",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "d0ffcef01cef4f0b9a989b152951bfbc",
+        "Name": "LinkInstance.ByTitle",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 894.9918451813751,
+        "Y": 546.2675781035346
+      },
+      {
+        "Id": "4a084fabd0a14dadac9281c36951e057",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 577.8437298383567,
+        "Y": 683.0246858905031
+      },
+      {
+        "Id": "bab6a84691c941d9a96b569a4cf426e8",
+        "Name": "LinkInstance.AllElementsOfCategoryInView",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 869.6092473465044,
+        "Y": 1114.772165335704
+      },
+      {
+        "Id": "eb6c5ae183ab4ee4af4fe3f0d576a285",
+        "Name": "LinkInstance.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 807.1339920363024,
+        "Y": 941.3365786410252
+      },
+      {
+        "Id": "148f7c2a39f241488c956993c42c65c3",
+        "Name": "LinkInstance.Document",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1377.1734538847163,
+        "Y": 962.1975206168545
+      },
+      {
+        "Id": "184a8b737b9243aab18e73e79f3f4913",
+        "Name": "LinkInstance.Document",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1367.6895171487902,
+        "Y": 1206.7476035932286
+      },
+      {
+        "Id": "cef13bf45221408386a2813e94929289",
+        "Name": "LinkElement.GetLocation",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1617.6589925456933,
+        "Y": 641.0985197005078
+      },
+      {
+        "Id": "fc555200365c403bb3bcf0fd19510c38",
+        "Name": "LinkInstance.AllElementsAtLevel",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1789.2963471024252,
+        "Y": 1063.823753921199
+      },
+      {
+        "Id": "3902e13e76144be7ae54f5c2ff9f2561",
+        "Name": "LinkInstance.AllElementsOfCategory",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1150.135574812739,
+        "Y": 358.1974663379133
+      },
+      {
+        "Id": "804b390b9fa149a08eeebbb9df6d7f9c",
+        "Name": "FamilyDocument.Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 384.5031963443678,
+        "Y": 1065.7588066172266
+      },
+      {
+        "Id": "5500cd4a6e1240d68a108d3a1d97607a",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 502.41829970657636,
+        "Y": 473.47644489586287
+      }
+    ],
+    "Annotations": [],
+    "X": -182.70967505326644,
+    "Y": 4.9133096223736175,
+    "Zoom": 0.7476928171233252
+  }
+}

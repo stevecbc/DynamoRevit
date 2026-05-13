@@ -1,0 +1,388 @@
+{
+  "Uuid": "6ea3f153-dae1-4290-aeed-b4fef245d2e4",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.PathOfTravel.InsertWayPoint",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "85d3f317b735439c8965a229b9bfd803",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c35ca18accef4ad29f289039322dc497",
+          "Name": "pathOfTravel",
+          "Description": "Revit.Elements.PathOfTravel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4abfb8fb8a94484b80cf0eeafcfc0c2d",
+          "Name": "var[]..[]",
+          "Description": "List of WayPoints for the given PathOfTravel element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.PathOfTravel.GetWayPoints",
+      "Replication": "Auto",
+      "Description": "Returns the WayPoints set from PathOfTravel element.\n\nPathOfTravel.GetWayPoints ( ): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a23c3b9771354c07b578b6fe174727b6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "8cba44c8393a4c60ba0c034ae57a4eed",
+          "Name": "pathOfTravel",
+          "Description": "Revit.Elements.PathOfTravel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "80d1bd93ccbd4d0dbcfa729a35a90ee0",
+          "Name": "wayPoint",
+          "Description": "The waypoint to insert.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7342732edad34532a10703b22d1b7957",
+          "Name": "index",
+          "Description": "The index to insert the waypoint at.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dd76754d64944742929dd822e4bb6bf1",
+          "Name": "PathOfTravel",
+          "Description": "The PathOfTravel element after the WayPoint was inserted.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.PathOfTravel.InsertWayPoint@Autodesk.DesignScript.Geometry.Point,int",
+      "Replication": "Auto",
+      "Description": "Inserts a WayPoint to PathOfTravel element at the specified index.\n\nPathOfTravel.InsertWayPoint (wayPoint: Point, index: int): PathOfTravel"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "e454b3ac57284d4e8c3c311fcf64a23c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0e1feb7a67d94d4d8bf60b249d6cf3c6",
+          "Name": "pathOfTravel",
+          "Description": "Revit.Elements.PathOfTravel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "db1721139d20405f80e7a99d8996f295",
+          "Name": "var[]..[]",
+          "Description": "List of WayPoints for the given PathOfTravel element.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.PathOfTravel.GetWayPoints",
+      "Replication": "Auto",
+      "Description": "Returns the WayPoints set from PathOfTravel element.\n\nPathOfTravel.GetWayPoints ( ): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "0a45acc1abe94080a8bab416d88a9b69",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1f35467dbb114a6cb941e64d89917d52",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "855a5bf2ae2e462dad601386afeb76c7",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "184f5bd4c8c34542b43c05ebad7b9b41",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double",
+      "Replication": "Auto",
+      "Description": "Form a Point in the XY plane given two 2 cartesian coordinates. The Z component is 0.\n\nPoint.ByCoordinates (x: double = 0, y: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "bd1f4aa6-74a9-46ed-b3e1-735762114887-00289e90"
+      ],
+      "Id": "fb4b6e952d4f4a28a4c7ba901b7a4bea",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "890eacf96f97434b8053c173f025c115",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a model element from the document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "9776100a6ab84bc09b18044cd7781340",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9467b98caf5b4941a3a5351c6c2e9e43",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 1.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "106bda5035de4280bf6a65377cb86c66",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a795d7861e2c41fca18c5cd4f1259d3b",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 2.0
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "dd76754d64944742929dd822e4bb6bf1",
+      "End": "c35ca18accef4ad29f289039322dc497",
+      "Id": "cbaedbdeecc24592bd1e6f8349318bf0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "184f5bd4c8c34542b43c05ebad7b9b41",
+      "End": "80d1bd93ccbd4d0dbcfa729a35a90ee0",
+      "Id": "9d7c45cf44b94886addb6acd5c05d583",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "890eacf96f97434b8053c173f025c115",
+      "End": "8cba44c8393a4c60ba0c034ae57a4eed",
+      "Id": "243c3e95350f47debe856c91bdf23e00",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "890eacf96f97434b8053c173f025c115",
+      "End": "0e1feb7a67d94d4d8bf60b249d6cf3c6",
+      "Id": "464cea23c0134caeb9a8f51b9de9ce59",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9467b98caf5b4941a3a5351c6c2e9e43",
+      "End": "7342732edad34532a10703b22d1b7957",
+      "Id": "148e8c9a2fdd4b02aa226e7c15581910",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a795d7861e2c41fca18c5cd4f1259d3b",
+      "End": "1f35467dbb114a6cb941e64d89917d52",
+      "Id": "e0013799d6304affbaf78f9ace485934",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "85d3f317b735439c8965a229b9bfd803",
+        "Name": "PathOfTravel.GetWayPoints",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2066.9199228238363,
+        "Y": 923.7805040740068
+      },
+      {
+        "Id": "a23c3b9771354c07b578b6fe174727b6",
+        "Name": "PathOfTravel.InsertWayPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1671.6790684874195,
+        "Y": 876.6128150462542
+      },
+      {
+        "Id": "e454b3ac57284d4e8c3c311fcf64a23c",
+        "Name": "PathOfTravel.GetWayPoints",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2064.8235810892697,
+        "Y": 650.0
+      },
+      {
+        "Id": "0a45acc1abe94080a8bab416d88a9b69",
+        "Name": "Point.ByCoordinates",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1340.9199228238363,
+        "Y": 909.8652575956224
+      },
+      {
+        "Id": "fb4b6e952d4f4a28a4c7ba901b7a4bea",
+        "Name": "Select Model Element",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1337.775410221986,
+        "Y": 650.5780504074006
+      },
+      {
+        "Id": "9776100a6ab84bc09b18044cd7781340",
+        "Name": "Number",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1340.9199228238363,
+        "Y": 1105.7805040740068
+      },
+      {
+        "Id": "106bda5035de4280bf6a65377cb86c66",
+        "Name": "Number",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1128.5,
+        "Y": 907.7689158610555
+      }
+    ],
+    "Annotations": [],
+    "X": -1624.8816681872008,
+    "Y": -779.3049099521642,
+    "Zoom": 1.545620359375
+  }
+}

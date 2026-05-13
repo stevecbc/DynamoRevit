@@ -1,0 +1,210 @@
+{
+  "Uuid": "349ea766-485c-48ad-9d0b-30c9de747f46",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Revit.Elements.ImportInstance.Path",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "d12153a5b0df49aaac6f9c393d2eda23",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "114c00ee2d614a38ba18f58f9cfe3201",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path",
+      "HintPath": "C:\\Program Files\\Autodesk\\Snowdon Towers Sample Architectural - 3D View - {3D}.sat",
+      "InputValue": "C:\\Program Files\\Autodesk\\Snowdon Towers Sample Architectural - 3D View - {3D}.sat"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a12f874b12064d6e9c353bfb18a50857",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "791d9aa4c4194011a8fdc28068db2753",
+          "Name": "pathToFile",
+          "Description": "The path to the SAT file\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4906228df225434bbb16e344348570d9",
+          "Name": "ImportInstance",
+          "Description": "ImportInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ImportInstance.BySATFile@string",
+      "Replication": "Auto",
+      "Description": "Import Geometry from a SAT file. The SAT file is assumed to be in Feet.\n\nImportInstance.BySATFile (pathToFile: string): ImportInstance"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6d9bba1c60524726b5460443fcd82f8e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "589a3fef190c4a529f631220246a4e2d",
+          "Name": "importInstance",
+          "Description": "Revit.Elements.ImportInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4f0db2d836bb4f809e6b8e76b4bf8052",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ImportInstance.Path",
+      "Replication": "Auto",
+      "Description": "Gets file path of the sat file that represents the geometry of the specified ImportInstance Element\n\nImportInstance.Path: string"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "114c00ee2d614a38ba18f58f9cfe3201",
+      "End": "791d9aa4c4194011a8fdc28068db2753",
+      "Id": "24f26482c1c34e6baff5b3c2889e25f1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4906228df225434bbb16e344348570d9",
+      "End": "589a3fef190c4a529f631220246a4e2d",
+      "Id": "cfa2f42c8596498487c4df5e992623c3",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Snowdon Towers Sample Architectural - 3D View - {3D}.sat",
+      "ReferenceType": "External",
+      "Nodes": [
+        "d12153a5b0df49aaac6f9c393d2eda23",
+        "6d9bba1c60524726b5460443fcd82f8e"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "a12f874b-1206-4d6e-9c35-3bfb18a50857",
+      "Binding": {
+        "BySATFile_InClassDecl-1_InFunctionScope-1_Instance0_a12f874b-1206-4d6e-9c35-3bfb18a50857": "H4sIAAAAAAAACh3LMQ6DMAwF0Lv8uZZsA1aTmYWZse4QQ1J1YaiyIe5eibe/14m99IKM07H23/f4LLMjO6o2tkhCzYagUWuhYNlo3DQmaSqJg5j1mUKT4+FYjn5fNRMxuXC9/3eJ8vpfAAAA"
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -15.983033180236816,
+      "EyeY": 14.085175514221191,
+      "EyeZ": 78.0999526977539,
+      "LookX": 16.00663948059082,
+      "LookY": -17.340524673461914,
+      "LookZ": -77.36541748046875,
+      "UpX": 0.04242589697241783,
+      "UpY": 0.9540387392044067,
+      "UpZ": -0.2050585001707077
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "d12153a5b0df49aaac6f9c393d2eda23",
+        "Name": "SAT File Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 632.9999999999999,
+        "Y": 609.0
+      },
+      {
+        "Id": "a12f874b12064d6e9c353bfb18a50857",
+        "Name": "ImportInstance.BySATFile",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1396.0,
+        "Y": 609.0
+      },
+      {
+        "Id": "6d9bba1c60524726b5460443fcd82f8e",
+        "Name": "ImportInstance.Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1789.0,
+        "Y": 609.0
+      }
+    ],
+    "Annotations": [],
+    "X": -459.7825,
+    "Y": -167.425,
+    "Zoom": 1.1575
+  }
+}

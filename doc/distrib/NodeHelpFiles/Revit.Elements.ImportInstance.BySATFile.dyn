@@ -1,0 +1,255 @@
+{
+  "Uuid": "349ea766-485c-48ad-9d0b-30c9de747f46",
+  "IsCustomNode": false,
+  "Description": "ImportInstance.BySATFile Demonstration - A comprehensive example showing how to import 3D geometry from SAT files into Revit using Dynamo, including analysis of the imported geometry properties.",
+  "Name": "Revit.Elements.ImportInstance.BySATFile",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "8cc7f653a9ea49d8a6768256934ff20b",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9ec60c872199475383a83c91adfebe85",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path",
+      "HintPath": "C:\\Users\\Steve\\Documents\\ADSK\\Snowdon Towers Sample Architectural - 3D View - {3D}.sat",
+      "InputValue": "C:\\Users\\Steve\\Documents\\ADSK\\Snowdon Towers Sample Architectural - 3D View - {3D}.sat"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "3d396a43fe7049988fd0a49192007b94",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "fac579350bff49aa967232ca082dbff6",
+          "Name": "pathToFile",
+          "Description": "The path to the SAT file\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0ac5149a24164889993206edf1f30d49",
+          "Name": "ImportInstance",
+          "Description": "ImportInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ImportInstance.BySATFile@string",
+      "Replication": "Auto",
+      "Description": "Import Geometry from a SAT file. The SAT file is assumed to be in Feet.\n\nImportInstance.BySATFile (pathToFile: string): ImportInstance"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "26a250313c9e416eb6db8e218bc3ecab",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f8c2b6435b6a4399a0c46e83fada3ede",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "019e716641a247b7812f6c9f187b69f8",
+          "Name": "geometry[]",
+          "Description": "List of geometry from the element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Replication": "Auto",
+      "Description": "Returns all geometry associated with an element. Ignores transforms when used with linked elements.\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "533be13fbbfb4e8fadfd147105e5a819",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "dd4bfd42608f428f8468a2c5504e7ced",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d9b5bb19cae8447f8d69d754cffe2ad2",
+          "Name": "BoundingBox",
+          "Description": "BoundingBox",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.BoundingBox",
+      "Replication": "Auto",
+      "Description": "Get an Axis-aligned BoundingBox of the Element\n\nElement.BoundingBox: BoundingBox"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "9ec60c872199475383a83c91adfebe85",
+      "End": "fac579350bff49aa967232ca082dbff6",
+      "Id": "17f7dba852a44605abc6a43ae56545f3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ac5149a24164889993206edf1f30d49",
+      "End": "f8c2b6435b6a4399a0c46e83fada3ede",
+      "Id": "5537c5fed4d84a56ba37d398e984a485",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0ac5149a24164889993206edf1f30d49",
+      "End": "dd4bfd42608f428f8468a2c5504e7ced",
+      "Id": "c85c33e10cc84e11a329604683a5864f",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Snowdon Towers Sample Architectural - 3D View - {3D}.sat",
+      "ReferenceType": "External",
+      "Nodes": [
+        "8cc7f653a9ea49d8a6768256934ff20b"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "3d396a43-fe70-4998-8fd0-a49192007b94",
+      "Binding": {
+        "BySATFile_InClassDecl-1_InFunctionScope-1_Instance0_3d396a43-fe70-4998-8fd0-a49192007b94": "H4sIAAAAAAAACh3LMQ6DMAwF0Lv8GUu2GyLC3IWZse5gB1J1YaiyIe5eibe/14nNu2PGaVj773t8lqdhNuzaOEcRavkRlHR3CpZKqWqM0lQKBzHrVLy5YTAsR7+v5iwi6cL1/gPZnq4XXwAAAA=="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -162.1771240234375,
+      "EyeY": 142.64193725585938,
+      "EyeZ": 166.1790771484375,
+      "LookX": 139.58055114746094,
+      "LookY": -147.74664306640625,
+      "LookZ": -159.50128173828125,
+      "UpX": 0.37659376859664917,
+      "UpY": 0.8203561902046204,
+      "UpZ": -0.43034034967422485
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "8cc7f653a9ea49d8a6768256934ff20b",
+        "Name": "SAT File Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -809.8858642573165,
+        "Y": 1132.7693128338103
+      },
+      {
+        "Id": "3d396a43fe7049988fd0a49192007b94",
+        "Name": "ImportInstance.BySATFile",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -46.885864257316484,
+        "Y": 1132.7693128338103
+      },
+      {
+        "Id": "26a250313c9e416eb6db8e218bc3ecab",
+        "Name": "Element.Geometry",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 337.69493570623206,
+        "Y": 1016.9933132590781
+      },
+      {
+        "Id": "533be13fbbfb4e8fadfd147105e5a819",
+        "Name": "Element.BoundingBox",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 335.30773573053295,
+        "Y": 1262.8685122627362
+      }
+    ],
+    "Annotations": [],
+    "X": 1186.7102223962402,
+    "Y": -877.2770539523401,
+    "Zoom": 1.300542204135662
+  }
+}

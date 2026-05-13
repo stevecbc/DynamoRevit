@@ -1,0 +1,484 @@
+{
+  "Uuid": "db10d483-726d-4eb8-93a3-ecddfd027d8c",
+  "IsCustomNode": false,
+  "Description": "Demonstrates how to create 3D model text in Revit using the ModelText.ByTextSketchPlaneAndPosition node. This graph shows all the required inputs: text content, sketch plane for orientation, XYZ positioning coordinates, and model text type for formatting. Model text appears as a 3D element in the model space, visible from multiple views unlike regular text annotations.",
+  "Name": "Revit.Elements.ModelText.ByTextSketchPlaneAndPosition",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "e3b5ade2f23e49fb91aacf39cc06675f",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "942e29f64f5d4dcda4a76188322f6906",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "DYNAMO TEXT"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "bf5b39d73c0c4ddc8a4cecb8b0376ed2",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aeb506e820da49c991d34ba7b08ef99d",
+          "Name": "Plane",
+          "Description": "Plane at XY plane of world",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Plane.XY",
+      "Replication": "Auto",
+      "Description": "Creates a plane in the world XY\n\nPlane.XY ( ): Plane"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8bb2ad1fdaee4a9297a2f28d33b7c0dc",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "861f2c7f02c74cab9139e9cec42df60d",
+          "Name": "plane",
+          "Description": "Plane",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3bb1a3f63ab24eeaa939aaa8b3954924",
+          "Name": "SketchPlane",
+          "Description": "SketchPlane",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.SketchPlane.ByPlane@Autodesk.DesignScript.Geometry.Plane",
+      "Replication": "Auto",
+      "Description": "Make a Revit SketchPlane given a plane\n\nSketchPlane.ByPlane (plane: Plane): SketchPlane"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "f4dfe777e3ca4e5f8c3e58d649ece44e",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c93a40747e8a4291902b9a4a28945bf6",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 0.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "066f5614aa284610a8491d99abfd4c87",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3677ddc325fc441ca9aaf91560b72d9d",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 0.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NumberType": "Double",
+      "Id": "da5b64f4c15c4145ba3af30abc698e21",
+      "NodeType": "NumberInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f321e12635a14243a9db78232835f85d",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number.",
+      "InputValue": 10.0
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "699aa051bb9942d4a8c9f81b0e09b526",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a4ac564348744304a70b113e4a3e5006",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "Model Text 1"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "25b9451e4e90492e8fee2375105e34a7",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "80861d0f37434155b66916102dda5497",
+          "Name": "name",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ab9b96954bc84732a27e39f63ba3a0f2",
+          "Name": "ModelTextType",
+          "Description": "ModelTextType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ModelTextType.ByName@string",
+      "Replication": "Auto",
+      "Description": "Select a ModelTextType from the current document by name\n\nModelTextType.ByName (name: string): ModelTextType"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "1f6787cfafdd41efab0a0a6be24df5ca",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e7b7707c0d054e04b40be1af9d660995",
+          "Name": "text",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "61264569ac3549caa725512441f6226c",
+          "Name": "sketchPlane",
+          "Description": "SketchPlane",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "870cf64f935443f98ef5d799c511d240",
+          "Name": "xCoordinateInPlane",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b67ea291dab54d5e8229f97b55674663",
+          "Name": "yCoordinateInPlane",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc9e590e05f84fecb97a918a56fbaf33",
+          "Name": "textDepth",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "882e87a8d1274969a79960a18cca2fe3",
+          "Name": "modelTextType",
+          "Description": "ModelTextType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "385c68a17a6046c18ce48f9f974d74a8",
+          "Name": "ModelText",
+          "Description": "ModelText",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.ModelText.ByTextSketchPlaneAndPosition@string,Revit.Elements.SketchPlane,double,double,double,Revit.Elements.ModelTextType",
+      "Replication": "Auto",
+      "Description": "Create a ModelText Element in the Family Document by providing the text, SketchPlane Element host, coordinates (within the plane of the SketchPlane), the depth of the text, and the text type name\n\nModelText.ByTextSketchPlaneAndPosition (text: string, sketchPlane: SketchPlane, xCoordinateInPlane: double, yCoordinateInPlane: double, textDepth: double, modelTextType: ModelTextType): ModelText"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "942e29f64f5d4dcda4a76188322f6906",
+      "End": "e7b7707c0d054e04b40be1af9d660995",
+      "Id": "29c013b970f84b6db8d660674d289e08",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "aeb506e820da49c991d34ba7b08ef99d",
+      "End": "861f2c7f02c74cab9139e9cec42df60d",
+      "Id": "e03563d906ec4b8daaa36a0de186f904",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3bb1a3f63ab24eeaa939aaa8b3954924",
+      "End": "61264569ac3549caa725512441f6226c",
+      "Id": "8a6fd55e7ee4499e83ad0939c9859efd",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c93a40747e8a4291902b9a4a28945bf6",
+      "End": "870cf64f935443f98ef5d799c511d240",
+      "Id": "44af9b1f82034b79a6d91e4b723dce78",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3677ddc325fc441ca9aaf91560b72d9d",
+      "End": "b67ea291dab54d5e8229f97b55674663",
+      "Id": "ce55f37e9dff4d9c9261951d3b935b36",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f321e12635a14243a9db78232835f85d",
+      "End": "cc9e590e05f84fecb97a918a56fbaf33",
+      "Id": "bcec4ea031b94a82ad1bed89d432bf6a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a4ac564348744304a70b113e4a3e5006",
+      "End": "80861d0f37434155b66916102dda5497",
+      "Id": "fce8ef26bb5e46ec8062f931c1009d83",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ab9b96954bc84732a27e39f63ba3a0f2",
+      "End": "882e87a8d1274969a79960a18cca2fe3",
+      "Id": "d7e20e2044ed4205adbeca35043ad3b4",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": null,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "8bb2ad1f-daee-4a92-97a2-f28d33b7c0dc",
+      "Binding": {
+        "ByPlane_InClassDecl-1_InFunctionScope-1_Instance0_8bb2ad1f-daee-4a92-97a2-f28d33b7c0dc": "H4sIAAAAAAAACh3LKw6AMBAFwLs8zSZbPm0XjalGsohCC8EgSB3h7gTGz3QjxRLR41aM5TrOPQyKXmE29lGMkF19Ta3njsQ7psZunHNrU3JC/FkiKypFOMt/a3H2wTO/r7C+IFwAAAA="
+      }
+    },
+    {
+      "NodeId": "1f6787cf-afdd-41ef-ab0a-0a6be24df5ca",
+      "Binding": {
+        "ByTextSketchPlaneAndPosition_InClassDecl-1_InFunctionScope-1_Instance0_1f6787cf-afdd-41ef-ab0a-0a6be24df5ca": "H4sIAAAAAAAACh3LsQ5AMBAG4Hf5Z5ecor0zW8xGZyhFLAbpJt5d+PZvvJFijmhxG4Z8Hefed4bWUG4sUUslv4ijWrghlcBU+Y3XtfYpBSX+zNEZCkN/5v86DfLgmV5Ox96xXAAAAA=="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.2.11575",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "e3b5ade2f23e49fb91aacf39cc06675f",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 100.0,
+        "Y": 100.0
+      },
+      {
+        "Id": "bf5b39d73c0c4ddc8a4cecb8b0376ed2",
+        "Name": "Plane.XY",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 103.14451260185024,
+        "Y": 224.84389918519867
+      },
+      {
+        "Id": "8bb2ad1fdaee4a9297a2f28d33b7c0dc",
+        "Name": "SketchPlane.ByPlane",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 345.49212337655706,
+        "Y": 222.2713881041127
+      },
+      {
+        "Id": "f4dfe777e3ca4e5f8c3e58d649ece44e",
+        "Name": "X Position",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 102.09634173456675,
+        "Y": 377.9884117870488
+      },
+      {
+        "Id": "066f5614aa284610a8491d99abfd4c87",
+        "Name": "Y Position",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 100.0,
+        "Y": 500.0
+      },
+      {
+        "Id": "da5b64f4c15c4145ba3af30abc698e21",
+        "Name": "Z Position",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 101.04817086728337,
+        "Y": 622.0115882129512
+      },
+      {
+        "Id": "699aa051bb9942d4a8c9f81b0e09b526",
+        "Name": "Text Type Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 100.0,
+        "Y": 750.0
+      },
+      {
+        "Id": "25b9451e4e90492e8fee2375105e34a7",
+        "Name": "ModelTextType.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 400.0,
+        "Y": 750.0
+      },
+      {
+        "Id": "1f6787cfafdd41efab0a0a6be24df5ca",
+        "Name": "ModelText.ByTextSketchPlaneAndPosition",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 752.4085433641694,
+        "Y": 336.3737787253159
+      }
+    ],
+    "Annotations": [],
+    "X": 274.6854383100724,
+    "Y": -18.709292963381557,
+    "Zoom": 1.277716984107724
+  }
+}
